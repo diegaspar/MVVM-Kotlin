@@ -8,4 +8,4 @@ Dagger2
 ConstraintLayout
 Data binding
 Retrofit
-Room
+Room 
