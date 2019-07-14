@@ -1,0 +1,5 @@
+<resources>
+    <!--<string name="app_name">MVVM-Kotlin</string>-->
+
+    <string name="has_issues">HAS ISSUES</string>
+</resources>

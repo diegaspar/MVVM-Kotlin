@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.diegaspar.mvvm_kotlin"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+
+        finalProduction {
+            dimension "default"
+            applicationId "com.diegaspar.mvvm_kotlin"
+            resValue "string", "app_name", "MVVM App"
+        }
+
+        demoProduction {
+            dimension "default"
+            applicationId "com.diegaspar.mvvm_kotlin.devProd"
+            resValue "string", "app_name", "MVVM App Dev Prod"
+        }
+
+        demoTesting {
+            dimension "default"
+            applicationId "com.diegaspar.mvvm_kotlin.dev"
+            resValue "string", "app_name", "MVVM App Dev"
+        }
+
+
+        mock {
+            dimension "default"
+            applicationId "com.diegaspar.mvvm_kotlin.mock"
+            resValue "string", "app_name", "MVVM App Mock"
+        }
+    }
+    dataBinding.enabled = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Data Binding
+    kapt "com.android.databinding:compiler:3.2.0-alpha10"
+}
