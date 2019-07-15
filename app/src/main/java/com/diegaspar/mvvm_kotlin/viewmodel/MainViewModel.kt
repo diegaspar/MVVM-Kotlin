@@ -1,22 +1,25 @@
 package com.diegaspar.mvvm_kotlin.viewmodel
 
 import androidx.databinding.ObservableField
-import com.diegaspar.mvvm_kotlin.model.OnDataReadyCallback
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.diegaspar.mvvm_kotlin.model.OnRepositoryReadyCallback
 import com.diegaspar.mvvm_kotlin.model.RepoModel
+import com.diegaspar.mvvm_kotlin.uimodel.Repository
 
-class MainViewModel {
+class MainViewModel : ViewModel() {
     var repoModel: RepoModel = RepoModel()
-
-    val text = ObservableField<String>()
 
     val isLoading = ObservableField<Boolean>()
 
-    fun refresh() {
+    var repositories = MutableLiveData<ArrayList<Repository>>()
+
+    fun loadRepositories() {
         isLoading.set(true)
-        repoModel.refreshData(object : OnDataReadyCallback {
-            override fun onDataReady(data: String) {
+        repoModel.getRepositories(object : OnRepositoryReadyCallback {
+            override fun onDataReady(dataRepositories: ArrayList<Repository>) {
                 isLoading.set(false)
-                text.set(data)
+                repositories.value = dataRepositories
             }
         })
     }
