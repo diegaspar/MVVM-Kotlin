@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:text="@string/button_main_get_data"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.loadRepositories()}"
+                android:onClick="@{() -> viewModel.loadPosts()}"
                 android:clickable="@{viewModel.isLoading ? false : true}"
                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"

@@ -57,9 +57,10 @@ android {
 
 dependencies {
 
-    def lifecycle_version = "2.2.0-alpha02"
-    def koin_version = "2.0.1"
+    def lifecycle_version = '2.2.0-alpha02'
+    def koin_version = '2.0.1'
     def anko_version = '0.10.8'
+    def retrofit_version = '2.6.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -81,7 +82,9 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
 
     //Networking
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
 
     //Room
@@ -89,6 +92,9 @@ dependencies {
 
     //DI
     implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-test:$koin_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
