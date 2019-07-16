@@ -57,9 +57,10 @@ android {
 
 dependencies {
 
-    def lifecycle_version = "2.2.0-alpha02"
-
+    def lifecycle_version = '2.2.0-alpha02'
+    def koin_version = '2.0.1'
     def anko_version = '0.10.8'
+    def retrofit_version = '2.6.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -76,12 +77,35 @@ dependencies {
     //Anko
     implementation "org.jetbrains.anko:anko:$anko_version"
 
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+
+    //Networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
+
+    //Room
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    //DI
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-test:$koin_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     //Data Binding
     kapt "com.android.databinding:compiler:3.2.0-alpha10"
+    implementation 'androidx.room:room-runtime:2.1.0'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0'
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 }
