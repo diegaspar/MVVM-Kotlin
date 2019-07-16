@@ -58,7 +58,7 @@ android {
 dependencies {
 
     def lifecycle_version = "2.2.0-alpha02"
-
+    def koin_version = "2.0.1"
     def anko_version = '0.10.8'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -76,10 +76,25 @@ dependencies {
     //Anko
     implementation "org.jetbrains.anko:anko:$anko_version"
 
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+
+    //Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
+
+    //Room
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    //DI
+    implementation "org.koin:koin-core:$koin_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     //Data Binding
