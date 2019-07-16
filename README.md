@@ -4,8 +4,7 @@ Used Technologies :
 
 Kotlin
 Model-View-View-Model Architecture 
-Dagger2
-ConstraintLayout
+Koin
 Data binding
 Retrofit
 Room 
