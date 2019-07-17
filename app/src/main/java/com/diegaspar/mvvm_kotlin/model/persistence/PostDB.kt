@@ -21,5 +21,13 @@ data class PostDB(
                 body = post.body
             )
         }
+
+        fun mapList(postList: List<Post>): List<PostDB> {
+            val listPostDB = mutableListOf<PostDB>()
+            for (post in postList) {
+                listPostDB.add(map(post))
+            }
+            return listPostDB
+        }
     }
 }

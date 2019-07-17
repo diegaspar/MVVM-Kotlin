@@ -19,6 +19,9 @@ interface PostDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(postDB: PostDB)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertList(posts: ArrayList<PostDB>)
+
     @Delete
     fun delete(postDB: PostDB)
 

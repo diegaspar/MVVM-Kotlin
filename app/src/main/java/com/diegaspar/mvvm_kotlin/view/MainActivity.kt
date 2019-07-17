@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.diegaspar.mvvm_kotlin.R
 import com.diegaspar.mvvm_kotlin.base.BindingActivity
 import com.diegaspar.mvvm_kotlin.databinding.ActivityMainBinding
-import com.diegaspar.mvvm_kotlin.model.network.response.Post
+import com.diegaspar.mvvm_kotlin.model.persistence.PostDB
 import com.diegaspar.mvvm_kotlin.viewmodel.MainViewModel
 import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -39,7 +39,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(), RepositoryRecyclerV
 
     private fun observe() {
         model.posts.observe(this,
-            Observer<ArrayList<Post>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
+            Observer<ArrayList<PostDB>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
     }
 
 
