@@ -40,6 +40,14 @@ class MainActivity : BindingActivity<ActivityMainBinding>(), RepositoryRecyclerV
     private fun observe() {
         model.posts.observe(this,
             Observer<ArrayList<PostDB>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
+
+        model.showError.observe(this,
+            Observer {
+                it.getContentIfNotHandled()?.let {
+                    // Only proceed if the event has never been handled
+                    toast(getString(R.string.error_repo_data))
+                }
+            })
     }
 
 

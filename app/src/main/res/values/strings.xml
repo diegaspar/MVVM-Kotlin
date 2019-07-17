@@ -3,4 +3,5 @@
 
     <string name="has_issues">HAS ISSUES</string>
     <string name="button_main_get_data">Get Data</string>
+    <string name="error_repo_data">Error getting data</string>
 </resources>
