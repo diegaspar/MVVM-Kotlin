@@ -3,17 +3,17 @@ package com.diegaspar.mvvm_kotlin.view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.diegaspar.mvvm_kotlin.databinding.RvItemRepositoryBinding
+import com.diegaspar.mvvm_kotlin.databinding.RvItemPostBinding
 import com.diegaspar.mvvm_kotlin.model.persistence.PostDB
 
-class RepositoryRecyclerViewAdapter(
+class PostRecyclerViewAdapter(
     private var items: ArrayList<PostDB>?,
     private var listener: OnItemClickListener
-) : RecyclerView.Adapter<RepositoryRecyclerViewAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<PostRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = RvItemRepositoryBinding.inflate(layoutInflater, parent, false)
+        val binding = RvItemPostBinding.inflate(layoutInflater, parent, false)
         return ViewHolder(binding)
     }
 
@@ -34,7 +34,7 @@ class RepositoryRecyclerViewAdapter(
         fun onItemClick(position: Int)
     }
 
-    class ViewHolder(private var binding: RvItemRepositoryBinding) :
+    class ViewHolder(private var binding: RvItemPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(post: PostDB?, listener: OnItemClickListener?) {

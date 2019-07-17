@@ -13,12 +13,12 @@ import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BindingActivity<ActivityMainBinding>(), RepositoryRecyclerViewAdapter.OnItemClickListener {
+class MainActivity : BindingActivity<ActivityMainBinding>(), PostRecyclerViewAdapter.OnItemClickListener {
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_main
 
-    private val repositoryRecyclerViewAdapter = RepositoryRecyclerViewAdapter(arrayListOf(), this)
+    private val repositoryRecyclerViewAdapter = PostRecyclerViewAdapter(arrayListOf(), this)
     val model by viewModel<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +33,8 @@ class MainActivity : BindingActivity<ActivityMainBinding>(), RepositoryRecyclerV
         binding.lifecycleOwner = this
         binding.executePendingBindings()
 
-        binding.repositoryRv.layoutManager = LinearLayoutManager(this)
-        binding.repositoryRv.adapter = repositoryRecyclerViewAdapter
+        binding.postRv.layoutManager = LinearLayoutManager(this)
+        binding.postRv.adapter = repositoryRecyclerViewAdapter
     }
 
     private fun observe() {
