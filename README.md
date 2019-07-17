@@ -1,4 +1,4 @@
-# MVVM-Kotlin :rocket:
+# MVVM-Kotlin-Koin:rocket:
 
 This is a project made just for fun to try the MVVM architecture.
 
