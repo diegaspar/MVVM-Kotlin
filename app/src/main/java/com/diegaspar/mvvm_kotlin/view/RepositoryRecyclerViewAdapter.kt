@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diegaspar.mvvm_kotlin.databinding.RvItemRepositoryBinding
-import com.diegaspar.mvvm_kotlin.uimodel.Repository
+import com.diegaspar.mvvm_kotlin.model.network.response.Post
 
 class RepositoryRecyclerViewAdapter(
-    private var items: ArrayList<Repository>?,
+    private var items: ArrayList<Post>?,
     private var listener: OnItemClickListener
 ) : RecyclerView.Adapter<RepositoryRecyclerViewAdapter.ViewHolder>() {
 
@@ -25,7 +25,7 @@ class RepositoryRecyclerViewAdapter(
         } else 0
     }
 
-    fun replaceData(it: java.util.ArrayList<Repository>) {
+    fun replaceData(it: java.util.ArrayList<Post>) {
         items = it
         notifyDataSetChanged()
     }
@@ -37,8 +37,8 @@ class RepositoryRecyclerViewAdapter(
     class ViewHolder(private var binding: RvItemRepositoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(repo: Repository?, listener: OnItemClickListener?) {
-            binding.repository = repo
+        fun bind(post: Post?, listener: OnItemClickListener?) {
+            binding.post = post
             if (listener != null) {
                 binding.root.setOnClickListener { listener.onItemClick(layoutPosition) }
             }

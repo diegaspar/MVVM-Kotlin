@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.diegaspar.mvvm_kotlin.R
 import com.diegaspar.mvvm_kotlin.base.BindingActivity
 import com.diegaspar.mvvm_kotlin.databinding.ActivityMainBinding
-import com.diegaspar.mvvm_kotlin.uimodel.Repository
+import com.diegaspar.mvvm_kotlin.model.network.response.Post
 import com.diegaspar.mvvm_kotlin.viewmodel.MainViewModel
 import org.jetbrains.anko.toast
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -23,18 +23,25 @@ class MainActivity : BindingActivity<ActivityMainBinding>(), RepositoryRecyclerV
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        bind()
+        observe()
+    }
 
+
+    private fun bind() {
         binding.viewModel = getViewModel()
         binding.lifecycleOwner = this
         binding.executePendingBindings()
 
         binding.repositoryRv.layoutManager = LinearLayoutManager(this)
         binding.repositoryRv.adapter = repositoryRecyclerViewAdapter
-
-        model.repositories.observe(this,
-            Observer<ArrayList<Repository>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
-
     }
+
+    private fun observe() {
+        model.posts.observe(this,
+            Observer<ArrayList<Post>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
+    }
+
 
     override fun onItemClick(position: Int) {
         toast("onItem clicked")

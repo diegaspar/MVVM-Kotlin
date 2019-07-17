@@ -1,7 +1,7 @@
 package com.diegaspar.mvvm_kotlin.model.persistence
 
 import androidx.room.*
-import com.diegaspar.mvvm_kotlin.Constants
+import com.diegaspar.mvvm_kotlin.utils.Constants
 
 
 @Dao
