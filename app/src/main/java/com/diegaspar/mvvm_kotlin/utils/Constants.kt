@@ -1,4 +1,4 @@
-package com.diegaspar.mvvm_kotlin
+package com.diegaspar.mvvm_kotlin.utils
 
 class Constants{
     companion object{
