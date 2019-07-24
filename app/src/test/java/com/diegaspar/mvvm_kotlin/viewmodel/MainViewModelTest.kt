@@ -1,9 +1,12 @@
-package com.diegaspar.mvvm_kotlin
+package com.diegaspar.mvvm_kotlin.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.diegaspar.mvvm_kotlin.model.PostsRepository
 import com.diegaspar.mvvm_kotlin.model.persistence.PostDB
-import com.diegaspar.mvvm_kotlin.viewmodel.MainViewModel
+import com.diegaspar.mvvm_kotlin.utils.RxImmediateSchedulerRule
+import com.diegaspar.mvvm_kotlin.utils.mock
+import com.diegaspar.mvvm_kotlin.utils.testObserver
+import com.diegaspar.mvvm_kotlin.utils.whenever
 import com.google.common.truth.Truth
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
@@ -82,7 +85,7 @@ class MainViewModelTest {
     }
 
 
-    private fun testLiveDataPost(): com.diegaspar.mvvm_kotlin.TestObserver<ArrayList<PostDB>> {
+    private fun testLiveDataPost(): com.diegaspar.mvvm_kotlin.utils.TestObserver<ArrayList<PostDB>> {
         return viewModel.posts.testObserver()
     }
 }

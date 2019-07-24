@@ -1,4 +1,4 @@
-package com.diegaspar.mvvm_kotlin
+package com.diegaspar.mvvm_kotlin.utils
 
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.plugins.RxJavaPlugins

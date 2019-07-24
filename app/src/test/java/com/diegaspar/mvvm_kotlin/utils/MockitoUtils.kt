@@ -1,4 +1,4 @@
-package com.diegaspar.mvvm_kotlin
+package com.diegaspar.mvvm_kotlin.utils
 
 import org.mockito.Mockito
 import org.mockito.stubbing.OngoingStubbing
