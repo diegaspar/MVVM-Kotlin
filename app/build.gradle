@@ -100,7 +100,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "androidx.arch.core:core-testing:2.0.1"
+    testImplementation "com.google.truth:truth:0.36"
 
+
+    testImplementation 'org.mockito:mockito-core:2.21.0'
 
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
