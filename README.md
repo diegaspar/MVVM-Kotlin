@@ -1,6 +1,6 @@
 # MVVM-Kotlin-Koin:rocket:
 
-This is a project made just for fun to try the MVVM architecture.
+This is a project made just for fun to try the MVVM architecture with DataBinding.
 
 ## Libraries used
 - [Kotlin](https://kotlinlang.org/docs/reference/) :heart:
