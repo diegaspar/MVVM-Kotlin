@@ -1,6 +1,6 @@
 package com.diegaspar.mvvm_kotlin.di
 
-import com.diegaspar.mvvm_kotlin.model.network.api.PostApi
+import com.diegaspar.mvvm_kotlin.data.network.PostApi
 import org.koin.dsl.module
 import retrofit2.Retrofit
 

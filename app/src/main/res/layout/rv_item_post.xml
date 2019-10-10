@@ -8,7 +8,7 @@
 
         <variable
                 name="post"
-                type="com.diegaspar.mvvm_kotlin.model.persistence.PostDB"/>
+                type="com.diegaspar.mvvm_kotlin.presentation.model.PostUI"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -35,23 +35,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.083"
                     tools:text="PostId"/>
-
-            <TextView
-                    android:id="@+id/post_user_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:textStyle="bold"
-                    tools:text="UserId"
-                    android:text="@{String.valueOf(post.userId)}"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_id"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/post_id"
-                    app:layout_constraintTop_toTopOf="@+id/post_id"
-                    app:layout_constraintVertical_bias="1.0"/>
 
             <TextView
                     android:id="@+id/post_title"

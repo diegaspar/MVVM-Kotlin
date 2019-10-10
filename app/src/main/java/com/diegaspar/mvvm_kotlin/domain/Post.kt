@@ -1,4 +1,4 @@
-package com.diegaspar.mvvm_kotlin.model.network.response
+package com.diegaspar.mvvm_kotlin.domain
 
 import com.google.gson.annotations.SerializedName
 

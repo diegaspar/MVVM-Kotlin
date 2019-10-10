@@ -1,8 +1,8 @@
-package com.diegaspar.mvvm_kotlin.viewmodel
+package com.diegaspar.mvvm_kotlin.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.diegaspar.mvvm_kotlin.model.PostsRepository
-import com.diegaspar.mvvm_kotlin.model.persistence.PostDB
+import com.diegaspar.mvvm_kotlin.data.persistence.PostDB
 import com.diegaspar.mvvm_kotlin.utils.RxImmediateSchedulerRule
 import com.diegaspar.mvvm_kotlin.utils.mock
 import com.diegaspar.mvvm_kotlin.utils.testObserver

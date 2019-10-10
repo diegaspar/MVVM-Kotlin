@@ -1,13 +1,13 @@
-package com.diegaspar.mvvm_kotlin.view
+package com.diegaspar.mvvm_kotlin.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diegaspar.mvvm_kotlin.databinding.RvItemPostBinding
-import com.diegaspar.mvvm_kotlin.model.persistence.PostDB
+import com.diegaspar.mvvm_kotlin.presentation.model.PostUI
 
 class PostRecyclerViewAdapter(
-    private var items: ArrayList<PostDB>?,
+    private var items: List<PostUI>?,
     private var listener: OnItemClickListener
 ) : RecyclerView.Adapter<PostRecyclerViewAdapter.ViewHolder>() {
 
@@ -25,7 +25,7 @@ class PostRecyclerViewAdapter(
         } else 0
     }
 
-    fun replaceData(it: ArrayList<PostDB>) {
+    fun replaceData(it: List<PostUI>) {
         items = it
         notifyDataSetChanged()
     }
@@ -37,7 +37,7 @@ class PostRecyclerViewAdapter(
     class ViewHolder(private var binding: RvItemPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(post: PostDB?, listener: OnItemClickListener?) {
+        fun bind(post: PostUI?, listener: OnItemClickListener?) {
             binding.post = post
             if (listener != null) {
                 binding.root.setOnClickListener { listener.onItemClick(layoutPosition) }

@@ -9,14 +9,14 @@
         <import type="android.view.View"/>
         <variable
                 name="viewModel"
-                type="com.diegaspar.mvvm_kotlin.viewmodel.MainViewModel"
+                type="com.diegaspar.mvvm_kotlin.presentation.viewmodel.MainViewModel"
         />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".view.MainActivity">
+            tools:context=".presentation.ui.MainActivity">
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/post_rv"
